@@ -50,7 +50,7 @@
                 android:textSize="36sp"
                 android:textStyle="bold" />
             <Button
-                android:id="@+id/loginButton"
+                android:id="@+id/btninscri2"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"

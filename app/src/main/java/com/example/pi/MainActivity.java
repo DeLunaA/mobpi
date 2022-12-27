@@ -14,6 +14,15 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button eLogin;
+    private Button btni;
+
+    private EditText eName;
+    private EditText ePassword;
+    private TextView txterroruser;
+    UserDB db  = new UserDB(MainActivity.this);
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,54 +30,86 @@ public class MainActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
-        setContentView(R.layout.connecter);
+        setContentView(R.layout.loginpage);
 
-        Button btnconnectjava = findViewById(R.id.btnconnecter);
-        btnconnectjava.setOnClickListener(new View.OnClickListener() {
+
+
+        eName = findViewById(R.id.txtuser);
+
+        ePassword =  findViewById(R.id.txtpwd);
+
+        eLogin = findViewById(R.id.btninscri2);
+
+        btni=findViewById(R.id.btnn);
+
+        btni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                EditText txtuserjava = findViewById(R.id.email);
-                EditText txtpwdjava = findViewById(R.id.mdp);
+                Intent act20 = new Intent(MainActivity.this ,Main2Activity.class);
+                startActivity(act20);
+            }
+        });
+
+        eLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                EditText txtuserjava = findViewById(R.id.txtuser);
+                EditText txtpwdjava = findViewById(R.id.txtpwd);
 
                 String email = txtuserjava.getText().toString();
                 String mdp = txtpwdjava.getText().toString();
 
-                String msg = email + " " + mdp;
+                TextView errusername = findViewById(R.id.txtuser);
+                TextView errpass = findViewById(R.id.txtpwd);
 
+                String errormessage = "tous les champs sans requies !";
 
-                TextView erroremail = findViewById(R.id.erremail);
-                TextView errormdp = findViewById(R.id.errmdp);
 
                 Boolean valid = Boolean.TRUE;
 
                 if(email.matches("")){
-                    erroremail.setText("Ce champ est requis.");
+                    errusername.setText("Ce champ est requis.");
                     valid = Boolean.FALSE; }
                 //erroremail.setPadding(0,5,0,10);
-                else
-                    erroremail.setText("");
+                else{
+                    errusername.setText("");}
 
 
 
                 if(mdp.matches("")){
-                    errormdp.setText("Ce champ est requis.");
+                    errpass.setText("Ce champ est requis.");
                     valid=Boolean.FALSE;}
                 //errormdp.setPadding(0,5,0,10);
-                else
-                    errormdp.setVisibility(View.INVISIBLE);
-
+                else{
+                    errpass.setText("");}
 
 
                 if(valid){
-                    Intent Activity2 = new Intent(MainActivity.this, Activity2.class); //cree un lien activity 1 to 2
-                    Activity2.putExtra("Email",email);
-                    startActivity(Activity2);}
+
+                    db.open();
+
+                    Boolean checkuspass = db.checkuserpass(email,mdp);
+
+                    db.close();
+
+                    if (checkuspass==true){
+                        Toast.makeText(MainActivity.this,"login succss",Toast.LENGTH_SHORT).show();
+
+                    }else{
+                        Toast.makeText(MainActivity.this,"invalide credent",Toast.LENGTH_SHORT).show();
+
+                    }
+
+                }
+
 
 
             }
         });
 
+        /*
         User user1 = new User("user1","pass","123","user","admin");
         UserDB database = new UserDB(getApplicationContext());
 
@@ -83,6 +124,6 @@ public class MainActivity extends AppCompatActivity {
         else
             Toast.makeText(MainActivity.this ,"user nexiste pas " ,Toast.LENGTH_SHORT ).show();
 
-
+*/
     }
 }

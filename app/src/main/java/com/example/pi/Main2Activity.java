@@ -2,6 +2,7 @@ package com.example.pi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -24,7 +25,7 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
 
-        Button ins = findViewById(R.id.btninscri2);
+        Button ins = findViewById(R.id.btnforget);
 
 
         ins.setOnClickListener(new View.OnClickListener()
@@ -36,10 +37,10 @@ public class Main2Activity extends AppCompatActivity {
 
 
                 EditText nome = findViewById(R.id.enom);
-                EditText prenome = findViewById(R.id.eprenom);
-                EditText tele = findViewById(R.id.etel);
-                EditText emaile = findViewById(R.id.eemail);
-                EditText mdpe = findViewById(R.id.emdp);
+                EditText eprenom = findViewById(R.id.eprenom);
+                EditText etel = findViewById(R.id.etel);
+                EditText eemail = findViewById(R.id.eemail);
+                EditText emdp = findViewById(R.id.emdp);
 
 
                 TextView Nomerr = findViewById(R.id.Noommerr);
@@ -48,10 +49,10 @@ public class Main2Activity extends AppCompatActivity {
                 Boolean ok = Boolean.TRUE;
 
                 String nomm = nome.getText().toString();
-                String prenomm = prenome.getText().toString();
-                String tell = tele.getText().toString();
-                String emaill = emaile.getText().toString();
-                String mdpp = mdpe.getText().toString();
+                String prenomm = eprenom.getText().toString();
+                String tell = etel.getText().toString();
+                String emaill = eemail.getText().toString();
+                String mdpp = emdp.getText().toString();
 
 
 
@@ -111,19 +112,16 @@ public class Main2Activity extends AppCompatActivity {
 
                 if (ok) {
 
-
-
-
-
-
-
                     db.open();
 
-                    User u1 = new User(nome.getText().toString(),prenome.getText().toString(),tele.getText().toString(), emaile.getText().toString(), mdpe.getText().toString());     ///  u1 will be created with the essential infos once insc has been clicked
+                    User u1 = new User(etel.getText().toString(),eprenom.getText().toString(),nome.getText().toString(), eemail.getText().toString(), emdp.getText().toString());     ///  u1 will be created with the essential infos once insc has been clicked
 
                     db.insertUser(u1);
 
                     db.close();
+
+                    Intent act20 = new Intent(Main2Activity.this ,loginpage.class);
+                    startActivity(act20);
 
 
 /*

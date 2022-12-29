@@ -53,10 +53,10 @@ public class User {
     }
 
 
-    public User(String Nom, String Prenom, String Tel, String Email, String Mdp) {
-        this.Nom = Nom;
-        this.Prenom = Prenom;
+    public User(String Tel, String Prenom, String Nom, String Email, String Mdp) {
         this.Tel = Tel;
+        this.Prenom = Prenom;
+        this.Nom = Nom;
         this.Email = Email;
         this.Mdp = Mdp;
     }
@@ -68,9 +68,9 @@ public class User {
 
 
         private static final String TABLE_USER = "table_user";
-        private static final String COL_Nom = "Nom";
-        private static final String COL_Prenom = "Prenom";
         private static final String COL_Tel = "Tel";
+        private static final String COL_Prenom = "Prenom";
+        private static final String COL_Nom = "Nom";
         private static final String COL_Email = "Email";
         private static final String COL_Mdp = "Mdp";
 
@@ -82,9 +82,9 @@ public class User {
         public void onCreate(SQLiteDatabase db) {
 
             db.execSQL("CREATE TABLE " + TABLE_USER + " ("
-                    + COL_Nom + " TEXT," + COL_Prenom
-                    + " TEXT, " + COL_Tel
-                    + " TEXT PRIMARY KEY, " + COL_Email + " TEXT NOT NULL,"
+                    + COL_Tel + " TEXT PRIMARY KEY," + COL_Prenom
+                    + " TEXT, " + COL_Nom
+                    + " TEXT," + COL_Email + " TEXT NOT NULL,"
                     + COL_Mdp + " TEXT NOT NULL);");
         }
 
@@ -97,7 +97,9 @@ public class User {
 
 
         }
+
     }
+
 
 
 

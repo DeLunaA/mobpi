@@ -1,5 +1,6 @@
 package com.example.pi;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -22,7 +23,6 @@ public class MaBaseSQLite extends SQLiteOpenHelper {
 
     private static final String update_db = "DROP TABLE " + TABLE_USER + ";";
 
-
     public MaBaseSQLite(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
@@ -41,5 +41,7 @@ public class MaBaseSQLite extends SQLiteOpenHelper {
         //then recreate it by :
         onCreate(db);
     }
+
+
 
 }

@@ -8,8 +8,7 @@
     android:background="@drawable/whitecofbackground"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".act">
-
+    tools:context=".MainActivity">
 
 
     <androidx.cardview.widget.CardView
@@ -29,8 +28,8 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="123dp"
-                android:layout_height="112dp"
+                android:layout_width="245dp"
+                android:layout_height="175dp"
                 android:layout_gravity="center"
                 android:paddingRight="-20dp"
                 android:paddingBottom="10dp"
@@ -40,65 +39,22 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.224" />
-
             <TextView
                 android:id="@+id/loginText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Change password"
+                android:text="Let's get started"
                 android:textAlignment="center"
                 android:textColor="@color/coffee"
                 android:textSize="36sp"
                 android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/currentpass"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_edittext"
-                android:drawableLeft="@drawable/mainlock"
-                android:drawablePadding="8dp"
-                android:hint="Current password"
-                android:inputType="textPassword"
-                android:padding="8dp"
-                android:textColor="@color/black" />
-
-            <EditText
-                android:id="@+id/newpass"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_edittext"
-                android:drawableLeft="@drawable/mainlock"
-                android:drawablePadding="8dp"
-                android:hint="New password"
-                android:inputType="textPassword"
-                android:padding="8dp"
-                android:textColor="@color/black" />
-
-            <EditText
-                android:id="@+id/confirmnewpass"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_edittext"
-                android:drawableLeft="@drawable/mainlock"
-                android:drawablePadding="8dp"
-                android:hint="Confirm"
-                android:inputType="textPassword"
-                android:padding="8dp"
-                android:textColor="@color/black"/>
-
-
-
             <Button
-                android:id="@+id/btninscri2"
+                android:id="@+id/btnforget"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/coffee"
-                android:text="Submit"
+                android:text="Join now ! "
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
         </LinearLayout>

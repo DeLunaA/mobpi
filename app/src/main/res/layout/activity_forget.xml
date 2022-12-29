@@ -8,7 +8,7 @@
     android:background="@drawable/whitecofbackground"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".forget">
 
 
 
@@ -45,34 +45,32 @@
                 android:id="@+id/loginText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your password is"
+                android:text="Change password"
                 android:textAlignment="center"
                 android:textColor="@color/coffee"
                 android:textSize="36sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/btnn"
-                android:layout_width="wrap_content"
+                android:id="@+id/Textem"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="-20dp"
-                android:padding="-20dp"
-                android:text="Please do not share it"
+                android:text="Enter your email"
                 android:textAlignment="center"
                 android:textColor="@color/coffee"
-                android:textSize="16dp" />
+                android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/eemail"
+                android:id="@+id/zemail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/mainlock"
                 android:drawablePadding="8dp"
+                android:hint="Email"
                 android:padding="8dp"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background" />
+                android:textColor="@color/black" />
 
 
             <Button
@@ -81,7 +79,7 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/coffee"
-                android:text="Login page"
+                android:text="Submit"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
         </LinearLayout>

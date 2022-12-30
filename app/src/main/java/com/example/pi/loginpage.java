@@ -20,7 +20,6 @@ public class loginpage extends AppCompatActivity {
 
     private EditText eName;
     private EditText ePassword;
-    private TextView txterroruser;
     UserDB db  = new UserDB(loginpage.this);
 
 
@@ -33,19 +32,14 @@ public class loginpage extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.loginpage);
 
-
-
         eName = findViewById(R.id.txtuser);
-
         ePassword =  findViewById(R.id.txtpwd);
-
         eLogin = findViewById(R.id.btnlog);
 
         btni=findViewById(R.id.btnn);
         btni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent act20 = new Intent(loginpage.this ,Main2Activity.class);
                 startActivity(act20);
             }
@@ -55,7 +49,6 @@ public class loginpage extends AppCompatActivity {
         bfor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent act20 = new Intent(loginpage.this ,forget.class);
                 startActivity(act20);
             }
@@ -64,52 +57,32 @@ public class loginpage extends AppCompatActivity {
         eLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 EditText txtuserjava = findViewById(R.id.txtuser);
                 EditText txtpwdjava = findViewById(R.id.txtpwd);
 
                 String email = txtuserjava.getText().toString();
                 String mdp = txtpwdjava.getText().toString();
 
-                TextView errusername = findViewById(R.id.txtuser);
-                TextView errpass = findViewById(R.id.txtpwd);
-
-                String errormessage = "tous les champs sans requies !";
-
-
                 Boolean valid = Boolean.TRUE;
 
                 if(email.matches("")){
-                    errusername.setText("Ce champ est requis.");
+                    Toast.makeText(loginpage.this, "Email requied",Toast.LENGTH_SHORT).show();
                     valid = Boolean.FALSE; }
-                //erroremail.setPadding(0,5,0,10);
-                else{
-                    errusername.setText("");}
-
 
 
                 if(mdp.matches("")){
-                    errpass.setText("Ce champ est requis.");
+                    Toast.makeText(loginpage.this, "Password requied",Toast.LENGTH_SHORT).show();
                     valid=Boolean.FALSE;}
-                //errormdp.setPadding(0,5,0,10);
-                else{
-                    errpass.setText("");}
 
 
                 if(valid){
-
                     db.open();
-
                     Boolean checkuspass = db.checkuserpass(email,mdp);
-
                     db.close();
-
                     if (checkuspass==true){
-                        Toast.makeText(loginpage.this,"login succss",Toast.LENGTH_SHORT).show();
-
+                        Toast.makeText(loginpage.this,"Login succss",Toast.LENGTH_SHORT).show();
                     }else{
-                        Toast.makeText(loginpage.this,"invalide credent",Toast.LENGTH_SHORT).show();
-
+                        Toast.makeText(loginpage.this,"Invalide credent",Toast.LENGTH_SHORT).show();
                     }
 
                 }

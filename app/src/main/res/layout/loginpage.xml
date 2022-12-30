@@ -79,21 +79,22 @@
 
             <Button
                 android:id="@+id/btnfor"
-                android:layout_width="500dp"
-                android:layout_height="30dp"
+                android:layout_width="460dp"
+                android:layout_height="33dp"
                 android:layout_marginTop="1dp"
                 android:backgroundTint="@color/white"
                 android:text="Forget password"
                 android:textColor="@color/coffee"
                 android:textSize="10sp"
                 android:visibility="visible"
-                card_view:cornerRadius="20dp" />
+                card_view:cornerRadius="10dp" />
 
             <Button
                 android:id="@+id/btnlog"
-                android:layout_width="match_parent"
+                android:layout_width="280dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
                 android:backgroundTint="@color/coffee"
                 android:text="Login"
                 android:textSize="18sp"
@@ -101,12 +102,13 @@
 
             <Button
                 android:id="@+id/btnn"
-                android:layout_width="300dp"
+                android:layout_width="280dp"
                 android:layout_height="60dp"
+                android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:text="Create an account "
                 android:backgroundTint="@color/coffee"
-                android:textSize="18sp"
+                android:text="Create an account "
+                android:textSize="16dp"
                 android:visibility="visible"
                 card_view:cornerRadius="20dp" />
         </LinearLayout>

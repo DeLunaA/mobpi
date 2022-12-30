@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class UserDB {
     private static final int VERSION_BDD = 1;
-    private static final String NOM_BDD = "azeuez.db";
+    private static final String NOM_BDD = "newpi.db";
 
     private static final String TABLE_USER = "table_user";
 
@@ -93,7 +93,7 @@ public class UserDB {
     }
 
     public Boolean checkuserpass(String eEmail, String ePassword) {
-        Cursor m = bdd.rawQuery("select * from table_user where Email= ? and  Mpd = ? ", new String[]{eEmail, ePassword});
+        Cursor m = bdd.rawQuery("select * from table_user where Mdp= ? and  Email = ? ", new String[]{ePassword,eEmail });
 
         if (m.getCount() > 0)
             return true;
@@ -110,9 +110,19 @@ public class UserDB {
             return true;
         else
             return false;
-
-
     }
+
+    public Boolean updatepass(String Email,String pass){
+        ContentValues contentValues=new ContentValues();
+        contentValues.put("Mdp",pass);
+        long result=bdd.update("TABLE_USER",contentValues,"Email=?",new String[]{Email});
+        if (result==-1)
+            return false;
+        else
+            return true;
+    }
+
+
 
 
     public User getUserWithTelephone(String Tel) {
@@ -177,15 +187,17 @@ public class UserDB {
         return user;
     }
 
-    public Boolean updatepass(String Email,String pass){
-        ContentValues contentValues=new ContentValues();
-        contentValues.put("Mdp",pass);
-        long result=bdd.update("table_user",contentValues,"Email=?",new String[]{Email});
-        if (result==-1)
-            return false;
-        else
+    public Boolean checkusertel(String e) {
+        Cursor q = bdd.rawQuery("select * from TABLE_USER where Tel= ?" , new String[]{e});
+        if (q.getCount() > 0)
             return true;
+        else
+            return false;
+
     }
+
+
+
 
 
 

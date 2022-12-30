@@ -33,12 +33,15 @@ public class forget extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String user = emaill.getText().toString();
+
                 db.open();
                 Boolean checkuserr=db.checkuserEmail(user);
+                db.close();
+
                 if(checkuserr==true)
                 {
                     Intent intent = new Intent(forget.this ,ResetActivity.class);
-                    intent.putExtra("Email",user);
+                    intent.putExtra("keyemail",user);
                     startActivity(intent);
 
                 }else
@@ -49,6 +52,7 @@ public class forget extends AppCompatActivity {
 
 
             }
+
         });
 
 

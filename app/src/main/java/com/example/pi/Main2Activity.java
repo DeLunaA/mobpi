@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -33,9 +34,6 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View view)  {
 
-
-
-
                 EditText nome = findViewById(R.id.enom);
                 EditText eprenom = findViewById(R.id.eprenom);
                 EditText etel = findViewById(R.id.etel);
@@ -56,115 +54,84 @@ public class Main2Activity extends AppCompatActivity {
 
 
 
-                String errormessage = "tous les champs sans requies !";
-
-
                 if (nomm.matches("")) {
-                    Nomerr.setText(errormessage);
+                    Toast.makeText(Main2Activity.this, "Name requied",Toast.LENGTH_SHORT).show();
                     ok = Boolean.FALSE;
-
-                } else {
-
-                    Nomerr.setText("");
-
                 }
-                //--
+
                 if (prenomm.matches("")) {
-                    Nomerr.setText(errormessage);
+                    Toast.makeText(Main2Activity.this, "Last name requied",Toast.LENGTH_SHORT).show();
                     ok = Boolean.FALSE;
 
-                } else {
-
-                    Nomerr.setText("");
-
                 }
-                //--
+
                 if (tell.matches("")) {
-                    Nomerr.setText(errormessage);
+                    Toast.makeText(Main2Activity.this, "Phone number requied",Toast.LENGTH_SHORT).show();
                     ok = Boolean.FALSE;
+                    }
 
-                } else {
 
-                    Nomerr.setText("");
-
-                }
-                //--
                 if (emaill.matches("")) {
-                    Nomerr.setText(errormessage);
+                    Toast.makeText(Main2Activity.this, "Emaill number requied",Toast.LENGTH_SHORT).show();
                     ok = Boolean.FALSE;
-
-                } else {
-
-                    Nomerr.setText("");
 
                 }
 
                 if (mdpp.matches("")) {
-                    Nomerr.setText(errormessage);
+                    Toast.makeText(Main2Activity.this, "Password number requied",Toast.LENGTH_SHORT).show();
                     ok = Boolean.FALSE;
-
-                } else {
-
-                    Nomerr.setText("");
 
                 }
 
-
                 if (ok) {
-
                     db.open();
-
-                    User u1 = new User(etel.getText().toString(),eprenom.getText().toString(),nome.getText().toString(), eemail.getText().toString(), emdp.getText().toString());     ///  u1 will be created with the essential infos once insc has been clicked
-
-                    db.insertUser(u1);
-
+                    Boolean  checktel =  db.checkusertel(tell);
                     db.close();
+                    if (checktel==false){
+                        db.open();
+                        User u1 = new User(etel.getText().toString(),eprenom.getText().toString(),nome.getText().toString(), eemail.getText().toString(), emdp.getText().toString());     ///  u1 will be created with the essential infos once insc has been clicked
+                        db.insertUser(u1);
+                        db.close();
 
-                    Intent act20 = new Intent(Main2Activity.this ,loginpage.class);
-                    startActivity(act20);
+                        Intent act20 = new Intent(Main2Activity.this ,loginpage.class);
+                        startActivity(act20);
+                        Toast.makeText(Main2Activity.this,"Account created with success",Toast.LENGTH_SHORT).show();
 
+                    }else{
+                        Toast.makeText(Main2Activity.this,"this phone number is already exist ",Toast.LENGTH_SHORT).show();
 
-/*
-                                         if (checku == false ){
-
-                                                User1 u1 = new User1();     ///  u1 will be created with the essential infos once insc has been clicked
-                                                Toast.makeText(Activity2.this,"pcheww ",Toast.LENGTH_SHORT).show();
-
-                                                u1.setNumT(numt.getText().toString());
-                                                u1.setNom(Nom.getText().toString());
-                                                u1.setAddresse(ads.getText().toString());
-                                                u1.setMps(pss.getText().toString());
-
-
-
-
-                                                db.open();
-
-                                              Long checkinss =   db.insertUser(u1);
-
-                                              if ( checkinss == 0){
-
-                                                  Toast.makeText(Activity2.this,"inscription faied ",Toast.LENGTH_SHORT).show();
-                                                  db.close();
-
-                                              }
-                                              else{
-                                                  Toast.makeText(Activity2.this,"inscription ok ",Toast.LENGTH_SHORT).show();
-                                                  db.close();
-
-
-                                            }
+                    }
 
 
 
 
 
+                    /*if (checku == false ){
+                        User1 u1 = new User1();
+                        Toast.makeText(Activity2.this,"pcheww ",Toast.LENGTH_SHORT).show();
+
+                        u1.setNumT(numt.getText().toString());
+                        u1.setNom(Nom.getText().toString());
+                        u1.setAddresse(ads.getText().toString());
+                        u1.setMps(pss.getText().toString());
+
+                        db.open();
+
+                        Long checkinss =   db.insertUser(u1);
+
+                        if ( checkinss == 0){
+                            Toast.makeText(Activity2.this,"inscription faied ",Toast.LENGTH_SHORT).show();
+                            db.close();
+                        }
+                        else{
+                            Toast.makeText(Activity2.this,"inscription ok ",Toast.LENGTH_SHORT).show();
+                            db.close();
 
 
+                        }
 
+                    }*/
 
-                                            }
-*/
 
 
 
@@ -172,32 +139,6 @@ public class Main2Activity extends AppCompatActivity {
 
 
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -13,6 +13,20 @@
         android:theme="@style/Theme.Pi"
         tools:targetApi="31">
         <activity
+            android:name=".Homepage"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".hellopage"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ResetActivity"
             android:exported="false">
             <meta-data

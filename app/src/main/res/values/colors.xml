@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="purple">#8692f7</color>
     <color name="coffee">#492E28</color>
+    <color name="bgcoffee">#fff0f5</color>
+
 </resources>

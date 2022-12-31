@@ -80,13 +80,15 @@ public class loginpage extends AppCompatActivity {
                     Boolean checkuspass = db.checkuserpass(email,mdp);
                     db.close();
                     if (checkuspass==true){
-                        Toast.makeText(loginpage.this,"Login succss",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(loginpage.this,"Login succss",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(loginpage.this ,newhome.class);
+                        intent.putExtra("keyname",email);
+                        startActivity(intent);
                     }else{
                         Toast.makeText(loginpage.this,"Invalide credent",Toast.LENGTH_SHORT).show();
                     }
 
                 }
-
 
 
             }

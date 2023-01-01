@@ -81,7 +81,7 @@ public class loginpage extends AppCompatActivity {
                     db.close();
                     if (checkuspass==true){
                         //Toast.makeText(loginpage.this,"Login succss",Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(loginpage.this ,newhome.class);
+                        Intent intent = new Intent(loginpage.this ,start.class);
                         intent.putExtra("keyname",email);
                         startActivity(intent);
                     }else{

@@ -110,7 +110,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
                     app:cardCornerRadius="100dp"
-                    app:cardElevation="0dp">
+                    app:cardElevation="15dp">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -131,7 +131,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
                     app:cardCornerRadius="100dp"
-                    app:cardElevation="15dp">
+                    app:cardElevation="0dp">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -387,7 +387,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:elevation="20dp"
-                            android:src="@drawable/icedcapo"
+                            android:src="@drawable/caramel"
                             app:layout_constraintBottom_toTopOf="@+id/cardView22"
                             app:layout_constraintEnd_toEndOf="@+id/cardView22"
                             app:layout_constraintStart_toStartOf="@+id/cardView22"
@@ -425,7 +425,7 @@
                                         android:layout_height="match_parent"
                                         android:background="@color/white"
                                         android:gravity="center"
-                                        android:text="Iced Cappuccino"
+                                        android:text="Caramel Macchiato"
                                         android:textColor="@color/black"
                                         android:textSize="18dp"
                                         android:textStyle="bold" />
@@ -447,7 +447,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginStart="5dp"
                                         android:layout_weight="1"
-                                        android:text="8.900 DT"
+                                        android:text="4.600 DT"
                                         android:textColor="@color/black"
                                         android:textSize="14dp" />
 
@@ -488,7 +488,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:elevation="20dp"
-                            android:src="@drawable/icediced"
+                            android:src="@drawable/ca"
                             app:layout_constraintBottom_toTopOf="@+id/cardView23"
                             app:layout_constraintEnd_toEndOf="@+id/cardView23"
                             app:layout_constraintStart_toStartOf="@+id/cardView23"
@@ -526,7 +526,7 @@
                                         android:layout_height="match_parent"
                                         android:background="@color/white"
                                         android:gravity="center"
-                                        android:text="Cold Brew Latte"
+                                        android:text="Cappuccino"
                                         android:textColor="@color/black"
                                         android:textSize="18dp"
                                         android:textStyle="bold" />
@@ -597,7 +597,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:elevation="20dp"
-                            android:src="@drawable/americano"
+                            android:src="@drawable/ha"
                             app:layout_constraintBottom_toTopOf="@+id/cardView24"
                             app:layout_constraintEnd_toEndOf="@+id/cardView24"
                             app:layout_constraintStart_toStartOf="@+id/cardView24"
@@ -635,7 +635,7 @@
                                         android:layout_height="match_parent"
                                         android:background="@color/white"
                                         android:gravity="center"
-                                        android:text="Iced Americano"
+                                        android:text="Ristretto Bianco"
                                         android:textColor="@color/black"
                                         android:textSize="18dp"
                                         android:textStyle="bold" />
@@ -657,7 +657,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginStart="5dp"
                                         android:layout_weight="1"
-                                        android:text="3.900 DT"
+                                        android:text="5.900 DT"
                                         android:textColor="@color/black"
                                         android:textSize="14dp" />
 
@@ -698,7 +698,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:elevation="20dp"
-                            android:src="@drawable/mocha"
+                            android:src="@drawable/mo"
                             app:layout_constraintBottom_toTopOf="@+id/cardView26"
                             app:layout_constraintEnd_toEndOf="@+id/cardView26"
                             app:layout_constraintStart_toStartOf="@+id/cardView26"
@@ -736,7 +736,7 @@
                                         android:layout_height="match_parent"
                                         android:background="@color/white"
                                         android:gravity="center"
-                                        android:text="Cold Brew Latte"
+                                        android:text="Mocha Blanc"
                                         android:textColor="@color/black"
                                         android:textSize="18dp"
                                         android:textStyle="bold" />

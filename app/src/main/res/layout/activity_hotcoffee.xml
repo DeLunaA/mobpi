@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/bgcoffee"
     android:orientation="vertical"
-    tools:context=".newhome">
+    tools:context=".hotcoffee">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -177,7 +177,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:elevation="20dp"
-                            android:src="@drawable/icedcoffee"
+                            android:src="@drawable/late"
                             app:layout_constraintBottom_toTopOf="@+id/cardView"
                             app:layout_constraintEnd_toEndOf="@+id/cardView"
                             app:layout_constraintStart_toStartOf="@+id/cardView"
@@ -215,7 +215,7 @@
                                         android:layout_height="match_parent"
                                         android:background="@color/white"
                                         android:gravity="center"
-                                        android:text="Iced Latte"
+                                        android:text="Caffè Latte"
                                         android:textColor="@color/black"
                                         android:textSize="18dp"
                                         android:textStyle="bold" />
@@ -237,7 +237,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginStart="5dp"
                                         android:layout_weight="1"
-                                        android:text="6.900 DT"
+                                        android:text="3.900 DT"
                                         android:textColor="@color/black"
                                         android:textSize="14dp" />
 
@@ -278,7 +278,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:elevation="20dp"
-                            android:src="@drawable/icedcaramel"
+                            android:src="@drawable/ma"
                             app:layout_constraintBottom_toTopOf="@+id/cardView21"
                             app:layout_constraintEnd_toEndOf="@+id/cardView21"
                             app:layout_constraintStart_toStartOf="@+id/cardView21"
@@ -316,7 +316,7 @@
                                         android:layout_height="match_parent"
                                         android:background="@color/white"
                                         android:gravity="center"
-                                        android:text="Iced Caramel Macchiato"
+                                        android:text="Latte Macchiato"
                                         android:textColor="@color/black"
                                         android:textSize="18dp"
                                         android:textStyle="bold" />
@@ -338,7 +338,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginStart="5dp"
                                         android:layout_weight="1"
-                                        android:text="8.900 DT"
+                                        android:text="3.900 DT"
                                         android:textColor="@color/black"
                                         android:textSize="14dp" />
 
